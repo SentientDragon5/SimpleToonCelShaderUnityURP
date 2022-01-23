@@ -7,6 +7,8 @@ Shader "Toon/SimpleToon"
 
     Properties
     {
+        [HideInInspector]  _BaseMap("Albedo", 2D) = "white" {}
+
         _Cutoff("Alpha Cutoff", Range(0.0, 1.0)) = 0.5
 
         [HideInInspector] _SrcBlend("__src", Float) = 1.0
@@ -19,7 +21,7 @@ Shader "Toon/SimpleToon"
         // Editmode props
         [HideInInspector] _QueueOffset("Queue offset", Float) = 0.0
 
-        _MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
+        [MainTexture] _MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
         [HDR] _AmbientColor("Ambient Color", Color) = (0.8,0.8,0.8,1)
 	    [HDR] _SpecularColor("Specular Color", Color) = (0.9,0.9,0.9,1)
 	    _Glossiness("Glossiness", Float) = 32
